@@ -17,10 +17,6 @@ const userSchema = mongoose.Schema({
     type: String,
     // required: true,
   },
-  isAdmin: {
-    type: Boolean,
-    default: false,
-  },
   zip: {
     type: String,
     default: '',
@@ -36,6 +32,17 @@ const userSchema = mongoose.Schema({
   description: {
     type: String,
     default: '',
+  },
+  profilePicture: {
+    type: String,
+    default: '',
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
   },
 });
 

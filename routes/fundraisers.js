@@ -47,3 +47,43 @@ router.post('/fundraisers', async (req, res, next) => {
     next(error);
   }
 });
+
+router.get('/fundraisers/:id', async (req, res, next) => {
+  try {
+    const fundraiser = await Fundraiser.findById(req.params.id);
+    if (!fundraiser) {
+      return res.status(404).send('The fundraiser cannot be found');
+    }
+    res.send(fundraiser);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put('/fundraisers/:id', async (req, res, next) => {});
+
+router.delete('/fundraisers/:id', async (req, res, next) => {
+  try {
+    const findFundraiser = await Fundraiser.findById(req.params.id);
+
+    if (!findFundraiser) {
+      return res.status(404).send('The fundraiser cannot be found');
+    }
+
+    if (findFundraiser.userId !== req.auth.userId) {
+      return res.status(401).send('You cannot delete this fundraiser');
+    }
+
+    const fundraiser = await Fundraiser.findByIdAndRemove(req.params.id);
+
+    if (!fundraiser) {
+      return res.status(404).send('The fundraiser cannot be found');
+    }
+
+    res
+      .status(200)
+      .json({ success: true, message: 'The fundraiser is deleted' });
+  } catch (error) {
+    next(error);
+  }
+});
