@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import './CreateFundraiser.css';
+import { useNavigate } from 'react-router-dom';
 
 const CreateFundraiser = () => {
   const [containerState, setContainerState] = useState({
@@ -11,17 +12,13 @@ const CreateFundraiser = () => {
     goal: 0,
     currentStep: 0,
   });
-  /**
-   * Step 1:
-   *   - Ask for title and description
-   * Step 2:
-   *  - Ask for profile image
-   * Step 3:
-   * - Ask for QNA
-   * Step 4:
-   * - Ask for goal
-   *
-   */
+
+  const navigate=useNavigate();
+
+  const onSubmit = () => {
+    navigate('/');
+  }
+
   const resetState = () => {
     setContainerState({
       title: '',
@@ -185,6 +182,15 @@ const CreateFundraiser = () => {
                 value={containerState.goal}
                 onChange={handleChange}
               />
+            </div>
+            <div className="submit-button">
+              <Button
+                variant='contained'
+                color='primary'
+                onClick={onSubmit}
+              >
+                Submit
+              </Button>
             </div>
           </div>
         </div>

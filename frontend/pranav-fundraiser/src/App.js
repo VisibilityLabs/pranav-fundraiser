@@ -70,9 +70,7 @@ newestOnTop={true}
 stacked={true}
 closeOnClick
 />
-      <NavbarLite />
-      <Fundraiser />
-      <FooterLite />
+      <Routes />
     </div>
     </ThemeProvider>
   );

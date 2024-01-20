@@ -133,7 +133,14 @@ router.post('/login', async (req, res, next) => {
         secret,
         { expiresIn: '1d' },
       );
-      res.status(200).send({ user: user.email, token: token });
+      res.status(200).send({ user: user.email, token: token, 
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        zip: user.zip,
+        city: user.city,
+        country: user.country,
+      });
     } else {
       res.status(400).send('Password is mismatch');
     }

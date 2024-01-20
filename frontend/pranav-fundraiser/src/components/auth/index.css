@@ -3,120 +3,119 @@
     --light-blue: #1a73e8;
     --dark-blue: #37639e;
     --grey: #f6f4f6;
-  }
-  
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     font-family: "Inter", sans-serif;
-  }
-  
-  .navbar {
-    background: var(--main-green);
+}
+
+.navbar {
+    background: white;
+    border-bottom: 1px solid #dbd9db;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .navbar > ul {
+}
+
+.navbar>ul {
     display: flex;
     justify-content: space-around;
-  }
-  
-  .navbar > ul > li {
+}
+
+.navbar>ul>li {
     color: white;
     list-style-type: none;
     font-size: 15px;
     padding: 5px 20px;
-  }
-  
-  .navbar-logo {
+}
+
+.navbar-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 26px;
     font-weight: bold;
     width: 200px;
-  }
-  
-  .navbar-button {
+}
+
+.navbar-button {
     border: 2px solid white;
     margin: 0px 20px;
     border-radius: 10px;
     font-weight: bold;
-  }
-  
-  .footer {
+}
+
+.footer {
     background: var(--grey);
     display: flex;
     justify-content: center;
     bottom: 0;
     flex-direction: column;
-  }
-  
-  .footer-heading {
+}
+
+.footer-heading {
     font-weight: bold;
     color: #737273;
     font-size: 13px;
-  }
-  
-  .all-footers {
+}
+
+.all-footers {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     padding-top: 35px;
     min-width: 1000px;
     justify-content: space-between;
-  }
-  
-  .footer-sub-heading {
+}
+
+.footer-sub-heading {
     list-style-type: none;
     margin-top: 5px;
     font-size: 16px;
-  }
-  
-  .divider {
+}
+
+.divider {
     border-bottom: 1px solid #dbd9db;
     width: 1000px;
-  
     margin: 10px auto 10px auto;
-  }
-  
-  .trademarks {
+}
+
+.trademarks {
     display: flex;
     padding: 10px 10px;
     justify-content: space-between;
     min-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .copyrights{
+}
+
+.copyrights {
     color: #737273;
     font-size: 12px;
     margin: 10px 0px;
-    
-  }
-  
-  .language-button{
+}
+
+.language-button {
     padding: 10px 15px;
     height: 40px;
     border-radius: 5px;
     background: #EFEFEF;
     border: 1px solid #dbd9db;
-  }
-  
-  .login-page {
+}
+
+.login-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  
-  .login-content {
+}
+
+.login-content {
     margin: auto;
     flex: 1;
     display: flex;
@@ -125,73 +124,73 @@
     align-items: center;
     font-size: 15px;
     width: 300px;
-  }
-  
-  .login-heading {
+}
+
+.login-heading {
     font-weight: bold;
     margin: 10px 0px;
     font-size: 24px;
-  }
-  
-  .sign-up-link {
+}
+
+.sign-up-link {
     color: var(--main-green);
     text-decoration: underline;
-  }
-  
-  .login-input-fields {
+}
+
+.login-input-fields {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-  }
-  
-  .login-input-top {
+}
+
+.login-input-top {
     border-radius: 5px 5px 0px 0px;
     border: 1px solid var(--main-green);
     background: #fff;
     padding: 10px;
     border-bottom: none;
-  }
-  
-  .login-input-bottom {
+}
+
+.login-input-bottom {
     border-radius: 0px 0px 5px 5px;
     border: 1px solid var(--main-green);
     background: #fff;
     padding: 10px;
-  }
-  
-  .forgot-password-section {
+}
+
+.forgot-password-section {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
     padding: 10px 0px;
-  }
-  
-  .forgot-password-text {
+}
+
+.forgot-password-text {
     color: var(--main-green);
-  }
-  
-  .login-button {
+}
+
+.login-button {
     padding: 15px 125px;
     border-radius: 5px;
     background-color: var(--main-green);
-  }
-  
-  .login-button-text {
+}
+
+.login-button-text {
     font-size: 15px;
     font-weight: bold;
     color: white;
-  }
-  
-  .login-legal-conditions {
+}
+
+.login-legal-conditions {
     margin-top: 10px;
     font-size: 12px;
     line-height: 20px;
-  }
-  
-  .terms-of-service {
+}
+
+.terms-of-service {
     text-decoration: underline;
-  }
-  
-  .privacy-policy {
+}
+
+.privacy-policy {
     text-decoration: underline;
-  }
+}

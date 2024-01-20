@@ -268,6 +268,11 @@
     top: 10px;
 }
 
+.right-donations-container {
+    top: initial;
+    margin-top: 10px;
+}
+
 .fundraiser-progress {
     height: 4px;
     width: 100%;
@@ -382,9 +387,6 @@
     align-items: center;
 }
 
-
-/* add a small circle after first child of amount descriptor container */
-
 .amount-descriptor-container>*:first-child {
     position: relative;
 }
@@ -419,30 +421,45 @@
 
 .qna-item .qna-question-answer {
     max-height: 0px;
-    margin-top: -10px;
     font-size: 16px;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
     padding-top: 10px;
 }
 
 .qna-item.active .qna-question-answer {
     max-height: 1000px;
-    margin-top: 0px;
 }
 
 .qna-item .qna-question-question {
     font-size: 16px;
     position: relative;
     cursor: pointer;
+    margin-bottom: -10px;
+}
+
+.qna-item {
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.qna-item:not(.active):hover {
+    background-color: #e1e1e1;
 }
 
 .qna-item.active .qna-question-question {
     font-weight: 600;
+    margin-bottom: 0px;
 }
 
+.donation-percentage-container {
+    display: flex;
+    justify-content: space-between;
+}
 
-/* show an arrow at the end of qna-question-question */
+.donation-percentage {
+    font-weight: 400;
+}
 
 .qna-item .qna-question-question::after {
     content: "";
@@ -471,6 +488,62 @@
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
+}
+
+.new-donation-tier-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.new-donation-tier-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 8px;
+}
+
+.new-donation-tier-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-donation-tier-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    background: linear-gradient(90deg, white 0, white 50%, #5D885C 50%, #87C186 50%, #548F52 114%, white 0) var(--_p, 200%)/200% no-repeat;
+    color: #000000;
+    transition: .4s;
+}
+
+.new-donation-tier-item:hover {
+    cursor: pointer;
+    color: #fff;
+    --_p: 100%;
+}
+
+.new-donation-tier-item.active {
+    --_p: 100%;
+    color: #fff;
+}
+
+.donation-tier-item-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.donation-tier-item-description {
+    font-size: 14px;
+    font-weight: 300;
 }
 
 @media (max-width:1000px) {

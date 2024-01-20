@@ -16,6 +16,30 @@ router.get('/fundraisers', async (req, res, next) => {
   }
 });
 
+router.get('/search', (req, res, next) => {
+  const { name } = req.query;
+  const query = { $text: { $search: name } };
+
+  try {
+    const fundraiserList = Fundraiser.find(query).limit(10);
+    if (!fundraiserList) {
+      res.status(500).json({ 
+        success: false,
+        message: 'Cannot find fundraisers',
+        fundraisers: [],
+       });
+    }
+    res.send({
+      success: true,
+      message: 'Fundraisers found',
+      fundraisers: fundraiserList,
+    });
+  } catch(err) {
+    next(err);
+  }
+
+})
+
 router.post('/fundraisers', async (req, res, next) => {
   try {
     const validation = Joi.object({
@@ -60,6 +84,18 @@ router.get('/fundraisers/:id', async (req, res, next) => {
   }
 });
 
+router.get('/fundraisers/user/:id', async (req, res, next) => {
+  try {
+    const fundraiser = await Fundraiser.find({ userId: req.params.id }).populate('userId');
+    if (!fundraiser) {
+      return res.status(404).send('The fundraiser cannot be found');
+    }
+    res.send(fundraiser);
+  } catch (error) {
+    next(error);
+  }
+})
+
 router.put('/fundraisers/:id', async (req, res, next) => {});
 
 router.delete('/fundraisers/:id', async (req, res, next) => {
@@ -87,3 +123,5 @@ router.delete('/fundraisers/:id', async (req, res, next) => {
     next(error);
   }
 });
+
+module.exports = router;

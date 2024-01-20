@@ -18,6 +18,10 @@ const fundraiserSchema = mongoose.Schema({
     required: true,
     ref: 'User',
   },
+  totalDonation: {
+    type: Number,
+    default: 0,
+  },
   donationProgress: {
     type: Number,
     default: 0,

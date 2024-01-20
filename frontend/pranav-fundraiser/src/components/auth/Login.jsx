@@ -7,12 +7,13 @@ import { useAuth } from "../../context/auth";
 import "./index.css";
 
 const Login = () => {
-  const { login, logout } = useAuth();
+  // const { login, logout } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigate()
   const handleLogin = async () => {
-    login({email, password})
+    // login({email, password})
+    navigation('/')
   }
   return (
     <div className="login-page">
