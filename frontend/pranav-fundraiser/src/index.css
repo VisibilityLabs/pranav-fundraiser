@@ -1,14 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.circle-image {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+.navbar .logo {
+    margin-right: auto;
+}
+
+.navbar-lite-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row !important;
+    width: 100%;
+}
+
+.navbar-lite-container .navbar-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row;
 }
